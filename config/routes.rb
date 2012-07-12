@@ -1,10 +1,15 @@
 Iza::Application.routes.draw do
+  get "users/new"
+
   resources :posts do
 	resources :comments
   end 
 
+  root :to => 'home#index'
+   match '/rejestracja',  to: 'users#new'
+   match 'home/strona',    to: 'home#strona'
   get "home/index"
-  get "home/strona"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -55,8 +60,7 @@ Iza::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-    root :to => 'home#index'
-
+    
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

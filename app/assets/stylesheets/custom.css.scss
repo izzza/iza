@@ -1,0 +1,90 @@
+@import "bootstrap";
+
+html {
+  overflow-y: auto;
+}
+
+body {
+  padding-top: 60px;
+  padding-right: 30px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.center ul{
+  list-style: none;
+}
+
+.center ul li{
+}
+/*--------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5em;
+  font-color: green;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: 2px solid #808080;
+  color: #191970
+}
+
+footer a {
+  color: #191970
+}  
+
+footer a:hover { 
+  color: #0000FF;
+  text-decoration: underline; 
+}
+
+footer small {
+  float: right;
+  margin-right: 20px;
+}
+
+footer ul {
+  float: left;
+  list-style: none;
+}
+
+footer ul li {
+  float: right;
+  margin-right: 10px;
+}
