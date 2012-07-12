@@ -1,0 +1,23 @@
+
+<% provide(:title, 'Home') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+  </head>
+  <body>
+  
+  <div class="cont"> 
+
+    <h1> Railsy railsy</h1>
+
+    <ul class="nav pull-right">
+       <li><%= link_to "szałowy blog", posts_path %></li>
+       <li><a href="home/strona"%>Strona w ktorej nic nie ma</a></li>
+    </ul>
+
+  </div>
+  </body>
+</html>
+
+

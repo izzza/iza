@@ -1,0 +1,14 @@
+<% provide(:title, 'Strona testowa') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+  </head>
+  <body>
+    <p>
+      W ktorej nic nie ma
+    </p>
+  <p>link_to "Strona glowna", "./index"</p>
+  </body>
+</html>
+
