@@ -6,10 +6,7 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> rejestracja
 html {
   overflow-y: auto;
 }
@@ -91,10 +88,6 @@ footer ul li {
   float: right;
   margin-right: 10px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> rejestracja
 .debug_dump {
   clear: both;
   float: left;
@@ -106,16 +99,11 @@ footer ul li {
 aside {
   section {
     padding: 10px 0;
-<<<<<<< HEAD
     border-top: 1px solid $grayLighter;
     &:first-child {
       border: 0;
       padding-top: 0;
     }
-=======
-    border-top: 1px solid gray;
-
->>>>>>> rejestracja
     span {
       display: block;
       margin-bottom: 3px;
@@ -143,7 +131,6 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
-<<<<<<< HEAD
 
 section {
   overflow: auto;
@@ -165,5 +152,3 @@ textarea {
   @extend .control-group;
   @extend .error;
  }
-=======
->>>>>>> rejestracja

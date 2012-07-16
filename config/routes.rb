@@ -1,8 +1,6 @@
 Iza::Application.routes.draw do
-<<<<<<< HEAD
+
   resources :users
-=======
->>>>>>> rejestracja
 
   resources :users
   resources :posts do

@@ -1,23 +1,13 @@
-<<<<<<< HEAD
 <% provide(:title, 'Rejestracja') %>
-=======
-<% provide(:title, "Rejestracja") %>
->>>>>>> rejestracja
 <h1><%= yield(:title) %></h1>
 
 <div class="row">
   <div class="span6 offset3">
-<<<<<<< HEAD
 
-      <%= form_for(@user) do |f| %>
+   <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
       <%= f.label :name, "Nazwa" %>
-=======
-    <%= form_for(@user) do |f| %>
-
-      <%= f.label :name, "nazwa użytkownika" %>
->>>>>>> rejestracja
       <%= f.text_field :name %>
 
       <%= f.label :email %>
@@ -29,11 +19,7 @@
       <%= f.label :password_confirmation, "Potwierdź hasło" %>
       <%= f.password_field :password_confirmation %>
 
-<<<<<<< HEAD
       <%= f.submit "Utwórz konto", class: "btn btn-large btn-primary" %>
-=======
-      <%= f.submit "stwórz konto", class: "btn btn-large btn-primary" %>
->>>>>>> rejestracja
     <% end %>
   </div>
 </div>
