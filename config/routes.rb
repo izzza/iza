@@ -1,8 +1,8 @@
 Iza::Application.routes.draw do
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
-  resources :users
   resources :posts do
 	resources :comments
   end
@@ -10,6 +10,8 @@ Iza::Application.routes.draw do
   root :to => 'home#index'
    match '/rejestracja',  to: 'users#new'
    match 'home/strona',    to: 'home#strona'
+   match '/loguj', to: 'sessions#new'
+   match '/wyloguj', to: 'sessions#destroy', via: :delete
   get "home/index"
 
 

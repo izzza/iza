@@ -3,8 +3,23 @@
     <div class="container">
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Zarejestruj się", rejestracja_path %></li>
-          <li><%= link_to "Zaloguj",    '#' %></li>
+          <% if zalogowany? %>
+             <li><%= link_to "zarejestruj się", rejestracja_path %></li>
+            <li><%= link_to "użytkownicy", '#' %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> twoje konto <b class="caret"></b> </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "profil", current_user %></li>
+                <li><%= link_to "Ustawienia", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Wyloguj", wyloguj_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "zaloguj",    loguj_path %></li>
+          <% end %>
         </ul>
       </nav>
     </div>
