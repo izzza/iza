@@ -10,7 +10,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> twoje konto <b class="caret"></b> </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "profil", current_user %></li>
-                <li><%= link_to "Ustawienia", '#' %></li>
+                <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Wyloguj", wyloguj_path, method: "delete" %>
