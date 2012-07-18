@@ -9,10 +9,12 @@ Iza::Application.routes.draw do
 
   root :to => 'home#index'
    match '/rejestracja',  to: 'users#new'
-   match 'home/strona',    to: 'home#strona'
+   #match 'home/strona',    to: 'home#strona'
    match '/loguj', to: 'sessions#new'
    match '/wyloguj', to: 'sessions#destroy', via: :delete
-  get "home/index"
+   match '/users',  to: 'users#index'
+
+   get "home/index"
 
 
   # The priority is based upon order of creation:
