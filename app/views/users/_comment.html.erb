@@ -3,5 +3,8 @@
   <span class="content"> <%= comment.body %></span>
    <span class="timestamp">  Skomentowano: <%= time_ago_in_words(comment.created_at) %> temu   </span>
 <p>
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               :confirm => 'Na pewno skasowac?',
+               :method => :delete %>
    </p>
  </li>
