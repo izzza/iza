@@ -3,9 +3,12 @@ class CommentsController < ApplicationController
   http_basic_authenticate_with :name => "iza", :password => "1234", :only => :destroy
 
   def create
+    @comment = current_user.comments.build(params[:comment])
     @post = Post.find(params[:post_id])
     @user = current_user
-    @comment = @post.comments.create(body: "cos tam", commenter: "costam")
+   # @comment = @post.comments.create(body: "cos tam", commenter: "costam")
+    @comment.save
+    @comment.user_id = current_user.id
     redirect_to post_path(@post)
   end
 

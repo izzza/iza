@@ -12,7 +12,9 @@ gem 'bootstrap-will_paginate', '0.0.6'
 
 gem 'mysql2', :group => :development
 gem 'pg', :group => :production
-gem 'thin'
+group :production do
+  gem 'thin'
+end
 
 
 # Gems used only for assets and not required

@@ -1,37 +1,26 @@
 <% provide(:title, 'Post') %>
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+<div class="row">
+  <div class="span8">
+    <h1>  <%= @post.title %></h1>
+    <section>
+      <%= @post.content %>
+    </section>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+    <h3>Tagi:</h3>
+    <h3><%= join_tags(@post) %></h3>
+    <h3>Komentarze (<%= @post.comments.count %>):</h3>
+    <ul>
+      <li> cokolwiek </li>
+      <%= render @post.comments %>
+    </ul>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+    <h2>Dodaj komentarz:</h2>
+    <%= render "comments/form" %>
 
-<p>
-  <b>Tags:</b>
-  <%= join_tags(@post) %>
-</p>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+    <p><%= link_to 'Strona główna', "home/index" %></p>
+  </div>
+</div>
 
-<h2>Comments</h2>
-<ul>
-  <li> cokolwiek </li>
-  <%= render @post.comments %>
-</ul>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
-
-<br />
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-<p><%= link_to 'Strona główna', "home/index" %></p>
