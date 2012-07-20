@@ -8,5 +8,4 @@ module UsersHelper
 
   end
 
-
 end

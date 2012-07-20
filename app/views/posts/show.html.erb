@@ -1,33 +1,40 @@
-<% provide(:title, 'Post') %>
+<% if zalogowany? %>
+  <% provide(:title, 'Post') %>
 
-<div class="row">
-  <div class="span2">
-  <p> </p>
+  <div class="row">
+    <div class="span2">
+      <p> </p>
+    </div>
+    <div class="span8">
+      <h1>  <%= @post.title %></h1>
+      <section>
+        <%= @post.content %>
+      </section>
+      <section>
+        <h4>Tagi: </h4> <%= join_tags(@post) %>
+      </section>
+
+      <section>
+        <h3>Komentarze (<%= @post.comments.count %>):</h3>
+
+        <ul>
+          <%= render @post.comments %>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Dodaj komentarz:</h2>
+        <%= render "comments/form" %>
+      </section>
+
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </div>
   </div>
-  <div class="span8">
-    <h1>  <%= @post.title %></h1>
-    <section>
-      <%= @post.content %>
-    </section>
-    <section>
-      <h4>Tagi: </h4> <%= join_tags(@post) %>
-    </section>
 
-    <section>
-      <h3>Komentarze (<%= @post.comments.count %>):</h3>
-
-      <ul>
-        <%= render @post.comments %>
-      </ul>
-    </section>
-
-    <section>
-    <h2>Dodaj komentarz:</h2>
-    <%= render "comments/form" %>
-    </section>
-
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
-  </div>
-</div>
+<%else %>
+  <script type="text/javascript">
+    window.location.href="/home/index"
+  </script>
+<% end%>
 

@@ -1,12 +1,21 @@
-<% provide(:title, 'Użytkownicy') %>
-<h1><%= yield(:title) %></h1>
+ <% if zalogowany? %>
+  <% provide(:title, 'Użytkownicy') %>
+  <h1><%= yield(:title) %></h1>
 
-<%= will_paginate %>
+  <%= will_paginate %>
 
-<ul class="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-  <% end %>
-</ul>
+  <ul class="users">
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </ul>
 
-<%= will_paginate %>
+  <%= will_paginate %>
+
+<%else %>
+  <script type="text/javascript">
+    window.location.href="/home/index"
+  </script>
+<% end%>
+
+

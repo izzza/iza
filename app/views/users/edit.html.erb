@@ -1,28 +1,37 @@
-<% provide(:title, "Edytuj") %>
-<h1><%= yield(:title) %> </h1>
+<% if zalogowany? %>
+  <% provide(:title, "Edytuj") %>
+  <h1><%= yield(:title) %> </h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
 
-      <%= f.label :name, "Nazwa" %>
-      <%= f.text_field :name %>
+        <%= f.label :name, "Nazwa" %>
+        <%= f.text_field :name %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
 
-      <%= f.label :password, "Nowe hasło" %>
-      <%= f.password_field :password %>
+        <%= f.label :password, "Nowe hasło" %>
+        <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Potwierdź hasło" %>
-      <%= f.password_field :password_confirmation %>
+        <%= f.label :password_confirmation, "Potwierdź hasło" %>
+        <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Zapisz zmiany", class: "btn btn-large btn-primary" %>
-    <% end %>
+        <%= f.submit "Zapisz zmiany", class: "btn btn-large btn-primary" %>
+      <% end %>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails">change</a>
+    </div>
   </div>
-</div>
+
+<% else %>
+   <script type="text/javascript">
+     window.location.href="/posts"
+   </script>
+
+<% end %>
+
 
