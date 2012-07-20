@@ -1,32 +1,36 @@
-
 <% provide(:title, 'Posts') %>
-<div class="row">
-  <div class="span8">
+  <div class="row">
 
-		<table width="400" border="1" cellpadding="2" bgcolor="#DEB887">
-		  <tr align="center">
+  <% @posts.each do |post| %>
+    <div class="span2">
+      <h2><%= post.title %></h2>
+    </div>
+    <div class="span6">
+              <%= post.content %>
 
-			<th>Tytul notki</th>
-			<th>Treść</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		  </tr>
+    </div>
+  </div>
+  <div class = "row">
+    <div class="span6 offset2">
+      <section>
+        <%= link_to 'Pokaz', post %>
+          <% if current_user.admin? %>
+            | <%= link_to 'Edytuj', edit_post_path(post) %> |
+            <%= link_to 'Skasuj', post, method: :delete, data: { confirm: 'Na pewno skasowac?' } %>
+          <% end %>
 
-		<% @posts.each do |post| %>
-		  <tr align="center">
-			<td><%= post.name %></td>
-			<td><%= post.title %></td>
-			<td><%= post.content %></td>
-			<td><%= link_to 'Pokaz', post %></td>
-			<td><%= link_to 'Edytuj', edit_post_path(post) %></td>
-			<td><%= link_to 'Skasuj', post, method: :delete, data: { confirm: 'Na pewno skasowac?' } %></td>
-		  </tr>
-		<% end %>
-		</table>
+        <% end %>
+      </section>
+     </div>
+  </div>
+  <div class="row">
+      <div class = "span6 offset2">
+        <section>
+          <% if current_user.admin? %>
+            <h4><%= link_to 'Nowy post', new_post_path %></h4>
+          <% end %>
 
-
-        <h3><%= link_to 'Nowy post', new_post_path %></h3>
-
-		<p><%= link_to 'Strona główna', "home/index" %></p>
+        </section>
+      </div>
+  </div>
 

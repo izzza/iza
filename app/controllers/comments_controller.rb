@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @user = current_user
    # @comment = @post.comments.create(body: "cos tam", commenter: "costam")
-    @comment.save
     @comment.user_id = current_user.id
+    @comment.post_id = @post.id
+
+
+    @comment.save
     redirect_to post_path(@post)
   end
 

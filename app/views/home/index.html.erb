@@ -1,25 +1,29 @@
+ <% if !zalogowany? %>
+<% provide(:title, 'Strona główna') %>
 
-<% provide(:title, 'Home') %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %></title>
-  </head>
-  <body>
-  
-	<div class="center hero-unit"> 
+    <div class="span8 offset2">
 
-		<h1> Pierwsza aplikacja </h1>
-		<ul>
-			<li><%= link_to "szałowy blog", posts_path, class: "btn btn-large btn-primary"%></li>
-			<li><a href="home/strona" >Strona w ktorej nic nie ma</a></li>
-		</ul>
-		
-    
+	  <div class="center hero-unit">
 
+          <h1> Witaj!</h1>
+
+          <section>
+            <h2>Chcesz przeglądać blog i dodawać komentarze?</h2>
+            <%=link_to "Zaloguj się", loguj_path, class: "btn btn-large btn-success" %>
+          </section>
+          <section>
+            <h2>Nie masz konta?</h2>
+            <%=link_to "Załóż", rejestracja_path, class: "btn btn-large btn-success" %>
+          </section>
+           </div>
 	</div>
 	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-  </body>
-</html>
+
+  <% else %>
+    <script type="text/javascript">
+          window.location.href="/posts"  // put your correct path in a string here
+    </script>
+
+  <% end %>
 
 
