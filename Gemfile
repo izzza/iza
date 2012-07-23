@@ -10,10 +10,15 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', :group => :development
-gem 'pg', :group => :production
+#gem 'mysql2', :group => :development
+#gem 'pg', :group => :production
+group :development, :test do
+  gem 'mysql2'
+end
+
 group :production do
   gem 'thin'
+  gem 'pg'
 end
 
 
