@@ -1,6 +1,13 @@
 
 <li>
+  <h5><%= find_user(comment.user_id).name %>: </h5>
   <span class="content"> <%= comment.body %></span>
-   <span class="timestamp">  Skomentowano: <%= time_ago_in_words(comment.created_at) %> temu   </span>
+  <span class="timestamp">  Skomentowano: <%= time_ago_in_words(comment.created_at) %> temu   </span>
+    |
+  <% if comment.user_id == current_user.id %>
+      <%=link_to "Usuń", [comment.post, comment],
+               :confirm => 'Na pewno usunąć?',
+               :method => :delete %>
+           <% end %>
 
  </li>
