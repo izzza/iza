@@ -1,13 +1,16 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container-fluid">
       <nav>
         <ul class="nav pull-right">
           <% if zalogowany? %>
-
+            <li>
+                  <%= link_to "Wyloguj", wyloguj_path, method: "delete" %>
+            </li>
             <li><%= link_to "użytkownicy", users_path %></li>
             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> twoje konto <b class="caret"></b> </a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-user"></i><%= current_user.name %> <b class="caret"></b> </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "profil", current_user %></li>
                 <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
@@ -23,6 +26,7 @@
           <% end %>
         </ul>
         <ul class="nav pull-left">
+          <li><a class="brand" href="#">Blog RubyOnRails</a></li>
           <li><%= link_to "Strona główna", '/home/index' %> </li>
         </ul>
       </nav>
