@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -11,8 +12,8 @@
 }
 body {
   padding-top: 60px;
-  padding-right: 30px;
-  padding-left: 150px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 .center {
   text-align: center;
@@ -148,6 +149,7 @@ input, textarea, select, .uneditable-input {
 }
 
 section {
+	width: 100%;
   overflow: auto;
   padding: 10px 10px;
 
