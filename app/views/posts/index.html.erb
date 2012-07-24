@@ -1,8 +1,9 @@
 <% if zalogowany? %>
  <% provide(:title, 'Posts') %>
-  <div class="row">
 
-  <% @posts.each do |post| %>
+ <% @posts.each do |post| %>
+   <div class="row-fluid">
+
     <div class="span2">
       <h2><%= post.title %></h2>
     </div>
@@ -11,8 +12,9 @@
 
     </div>
   </div>
-  <div class = "row">
-    <div class="span6 offset2">
+  <div class = "row-fluid">
+    <div class="span4"> </div>
+    <div class="span6">
       <section>
         <%= link_to 'Pokaz', post %>
           <% if current_user.admin? %>
@@ -20,11 +22,13 @@
             <%= link_to 'Skasuj', post, method: :delete, data: { confirm: 'Na pewno skasowac?' } %>
           <% end %>
 
-        <% end %>
-      </section>
+        </section>
+
      </div>
-  </div>
-  <div class="row">
+   </div>
+   <% end %>
+
+  <div class="row-fluid">
       <div class = "span6 offset2">
         <section>
           <% if current_user.admin? %>

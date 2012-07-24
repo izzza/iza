@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
    # @comment = @post.comments.create(body: "cos tam", commenter: "costam")
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
-
+    @comment.commenter = current_user.name
 
     @comment.save
     redirect_to post_path(@post)

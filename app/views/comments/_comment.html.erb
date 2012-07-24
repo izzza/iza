@@ -3,8 +3,8 @@
   <h5><%= find_user(comment.user_id).name %>: </h5>
   <span class="content"> <%= comment.body %></span>
   <span class="timestamp">  Skomentowano: <%= time_ago_in_words(comment.created_at) %> temu   </span>
-    |
-  <% if comment.user_id == current_user.id %>
+
+  <% if comment.user_id == current_user.id && current_user.admin? %> |
       <%=link_to "Usuń", [comment.post, comment],
                :confirm => 'Na pewno usunąć?',
                :method => :delete %>

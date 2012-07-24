@@ -1,14 +1,14 @@
  <% if zalogowany? %>
 
   <% provide(:title, @user.name) %>
-  <div class="row">
-    <aside class="span4">
+  <div class="row-fluid">
+       <aside class="span5">
       <section>
         <h1>
           <%= gravatar_for @user %>
           <%= @user.name %>
         </h1>
-        <h3> <%= @user.email %> </h3>
+        <h5> <%= @user.email %> </h5>
       </section>
     </aside>
     <div class="span4">
