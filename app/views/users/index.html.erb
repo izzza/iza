@@ -3,13 +3,15 @@
   <h1><%= yield(:title) %></h1>
 
   <%= will_paginate %>
-
+  <div class="row-fluid">
+  <div class = "span11">
   <ul class="users">
     <% @users.each do |user| %>
       <%= render user %>
     <% end %>
   </ul>
-
+</div>
+</div>
   <%= will_paginate %>
 
 <%else %>

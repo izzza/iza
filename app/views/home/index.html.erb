@@ -1,7 +1,7 @@
  <% if !zalogowany? %>
 <% provide(:title, 'Strona główna') %>
 
-    <div class="span8 offset2">
+
 
 	  <div class="center hero-unit">
 
@@ -16,8 +16,7 @@
             <%=link_to "Załóż", rejestracja_path, class: "btn btn-large btn-success" %>
           </section>
            </div>
-	</div>
-	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
 
   <% else %>
     <script type="text/javascript">

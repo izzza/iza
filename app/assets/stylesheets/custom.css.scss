@@ -1,5 +1,7 @@
 @import "bootstrap";
-
+$lemon: #FFFACD;
+$dimgray: #696969;
+$whitesmoke: #F5F5F5;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -9,12 +11,63 @@
 @media (min-width: 1200px) {
   html {
   overflow-y: auto;
+  background-color: $lemon;
 }
 body {
-  padding-top: 60px;
-  margin-right: 150px;
-  margin-left: 150px;
+  padding-top: 0;
+  margin-right: 100px;
+  margin-left: 100px;
+  background-color: $lemon;
+
 }
+.tlo {
+  background-color: $lemon;
+
+
+}
+
+
+.span9 {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-right: 0px;
+  .span3 {
+     padding-top: 0;
+     border-right: 1px solid #778899;
+     padding-right: 15px;
+     padding-left: 15px;
+    background-color: $whitesmoke;
+
+
+  }
+   background-color: $whitesmoke;
+   border: 0px solid #FFE4C4;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+   box-shadow: 5px 5px 20px #888888;
+}
+.span3 {
+
+  .bord {
+    .nav-list {
+  background-color: $whitesmoke;
+  padding: 14px 14px 5px 14px;
+  border: 0px solid #FFE4C4;
+  border-radius: 25px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 20px #888888;
+
+
+  }
+
+}
+  padding-top: 60px;
+  background-color: $lemon;
+
+
+ }
+
+
 .center {
   text-align: center;
 }
@@ -186,7 +239,7 @@ textarea {
    list-style: none;
    li {
     overflow: auto;
-    padding: 10px 0;
+    padding: 10px 0 10px 0;
     border-top: 1px dashed gray;
     &:last-child {
       border-bottom: 1px dashed gray;
@@ -222,19 +275,10 @@ aside {
   }
 }
 
-.navbar-fixed-top .navbar-inner {
-  padding-left: 100;
-  padding-right: 100;
-  @include border-radius(0);
-}
-
-
 }
 
 /* Landscape phones and down */
-  @media (max-width: 480px) {
-
-  }
+  @media (max-width: 480px) {  }
 
   /* Landscape phone to portrait tablet */
   @media (max-width: 767px) {  }

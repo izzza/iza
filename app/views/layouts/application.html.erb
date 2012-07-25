@@ -8,8 +8,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
+
+    <div class="tlo">
+      <%= render 'layouts/header' %>
     <div class = "container-fluid">
+
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %>
         </div>
@@ -26,7 +29,8 @@
         </div>
 		   <%= debug(params) if Rails.env.development? %>
       </div>
-         <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
+    </div>
     </div>
   </body>
 </html>
