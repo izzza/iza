@@ -222,6 +222,13 @@ aside {
   }
 }
 
+.navbar-fixed-top .navbar-inner {
+  padding-left: 100;
+  padding-right: 100;
+  @include border-radius(0);
+}
+
+
 }
 
 /* Landscape phones and down */
