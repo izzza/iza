@@ -1,24 +1,28 @@
 <% if zalogowany? %>
  <% provide(:title, 'Posts') %>
 
- <% @posts.each do |post| %>
+ <% @posts.reverse_each do |post| %>
    <div class="row-fluid">
 
-    <div class="span2">
+    <div class="span3">
       <h2><%= post.title %></h2>
     </div>
-    <div class="span6">
-              <%= post.content %>
+    <div class="span8">
+	<section>
 
+              <%= post.content.to(350) %>    ... 
+	 <%= link_to 'więcej', post %>
+
+		
+	</section>
     </div>
   </div>
   <div class = "row-fluid">
-    <div class="span4"> </div>
+    <div class="span3"> </div>
     <div class="span6">
       <section>
-        <%= link_to 'Pokaz', post %>
-          <% if current_user.admin? %>
-            | <%= link_to 'Edytuj', edit_post_path(post) %> |
+                 <% if current_user.admin? %>
+             <%= link_to 'Edytuj', edit_post_path(post) %> |
             <%= link_to 'Skasuj', post, method: :delete, data: { confirm: 'Na pewno skasowac?' } %>
           <% end %>
 
