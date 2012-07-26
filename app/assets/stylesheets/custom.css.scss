@@ -41,7 +41,7 @@ body {
      border-right: 1px solid #778899;
      padding-right: 15px;
      padding-left: 15px;
-    background-color: $whitesmoke;
+     background-color: $whitesmoke;
 
 
   }
@@ -289,10 +289,41 @@ aside {
 
 
 @media (min-width: 1200px) {
+
   }
 
 /* Landscape phones and down */
-  @media (max-width: 480px) {  }
+  @media (max-width: 480px) {
+
+  html {
+    overflow-y: auto;
+    background-color: $lemon;
+    }
+
+  .span9 {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 0px;
+  .span3 {
+     padding-top: 0;
+     border-right: 1px solid #778899;
+     padding-right: 5px;
+     padding-left: 5px;
+     background-color: $whitesmoke;
+  }
+   background-color: $whitesmoke;
+   border: 0px solid #FFE4C4;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+   box-shadow: 1px 1px 5px #888888;
+  }
+
+
+  .span3 {
+    width:100%;
+}
+}
 
   /* Landscape phone to portrait tablet */
   @media (max-width: 767px) {  }
