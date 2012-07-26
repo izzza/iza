@@ -1,4 +1,7 @@
 @import "bootstrap";
+//@import "responsive.css";
+@import "bootstrap-responsive";
+//@import "responsive.less";
 
 $lemon: #FFFACD;
 $dimgray: #696969;
@@ -10,6 +13,7 @@ $whitesmoke: #F5F5F5;
   box-sizing: border-box;
 }
 html {
+
   overflow-y: auto;
   background-color: $lemon;
   width:1200px;
@@ -304,10 +308,11 @@ body {
   margin-left: 0px;
   background-color: $red;
 }
-span9 {
+.span9 {
   width: 100%;
 
 }
+
 
 }
 
