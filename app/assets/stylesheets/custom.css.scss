@@ -288,5 +288,19 @@ aside {
   }
 }
 
+@media (min-width: 1200px) {
 
+  }
+
+/* Landscape phones and down */
+  @media (max-width: 480px) {
+  html {
+    background-color: $lemon;
+  width:320px;
+}
+
+}
+
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) {  }
 
